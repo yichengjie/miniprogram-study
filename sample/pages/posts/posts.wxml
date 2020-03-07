@@ -1,6 +1,6 @@
 <!--注意这里父容器高设置在swiper-item上没有效果-->
 <view>
-  <swiper indicator-dots ="true" autoplay="true" interval ="2000"> 
+  <swiper indicator-dots ="true" autoplay="true" interval ="5000"> 
     <swiper-item>
       <image src="/images/wx.png"></image>
       Content1
