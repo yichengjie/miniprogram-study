@@ -1,1 +1,3 @@
-/* pages/posts/posts.wxss */
+swiper,swiper-item image{
+  width:100%;height:500rpx;
+}
