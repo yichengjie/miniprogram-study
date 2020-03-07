@@ -2,7 +2,7 @@
 <!--view 类似 div 容器 分割文档-->
 <!--默认值： width:300px, height: 225px-->
 <view class="container">
-  <image bindtap="gotoIphone" src="../../images/avatar.png" class="user-avatar"></image>
+  <image src="../../images/avatar/4.png" class="user-avatar"></image>
   <text class="user-name">Hello，七月</text>
   <view class="moto-container">
       <text class="moto">开启小程序之旅</text>

@@ -1,7 +1,6 @@
 {
   "pages": [
-    "pages/welcome/welcome",
-    "pages/iphone6/iphone6"
+    "pages/welcome/welcome"
   ],
   "window": {
     "navigationBarBackgroundColor": "#b3d4db",
