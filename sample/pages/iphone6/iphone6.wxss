@@ -1,0 +1,4 @@
+/* pages/iphone6/iphone6.wxss */
+.iphone6{
+  width: 750rpx ;
+}

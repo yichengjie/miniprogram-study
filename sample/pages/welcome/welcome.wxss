@@ -9,6 +9,18 @@ page{
   align-items: center; 
   background-color: #b3d4db ;
 }
+/*小程序中的px和web中的px不太一样，
+这里的px指定是逻辑分辨率（即：pt），而不是指物理像素(px)，
+而设计图给的是物理像素(px)，
+iphone6下一个pt相当于两个px，所以这将设计图的像素全部/2即可,
+  width: 100px; 
+  height: 100px;
+
+ipone6下,一个物理像素等于一个rpx
+即：1px = 2rpx = 0.5pt
+  width: 200rpx; 
+  height: 200rpx;
+*/
 .user-avatar{
   width: 200rpx; 
   height: 200rpx;
