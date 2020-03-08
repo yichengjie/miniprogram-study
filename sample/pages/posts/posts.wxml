@@ -1,4 +1,6 @@
 <!--注意这里父容器高设置在swiper-item上没有效果-->
+<import src="./post-item/post-item-template.wxml" />
+
 <view>
   <swiper indicator-dots="true" autoplay="true" interval="5000">
     <swiper-item>
@@ -13,20 +15,6 @@
   </swiper>
 
   <block wx:for="{{posts}}"  wx:for-item="item" wx:key="index">
-    <view class="post-container">
-      <view class="post-athor-date">
-        <image class="post-author" src="{{item.avatar}}"></image>
-        <text class="post-date">{{item.date}}</text>
-      </view>
-      <text class="post-title">{{item.title}}</text>
-      <image class="post-image" src="{{item.imgSrc}}"></image>
-      <text class="post-content">{{item.content}}</text>
-      <view class="post-like">
-        <image class="post-like-image" src="/images/icon/chat.png"></image>
-        <text class="post-like-font">{{item.collection}}</text>
-        <image class="post-like-image" src="/images/icon/view.png"></image>
-        <text class="post-like-font">{{item.reading}}</text>
-      </view>
-    </view>
+    <template is="postItem" data="{{item}}" />
   </block>
 </view>
