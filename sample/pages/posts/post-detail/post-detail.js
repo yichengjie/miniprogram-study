@@ -6,63 +6,42 @@ Page({
   /**
    * 页面的初始数据
    */
-  data: {},
+  data: {
+    postId: -1,
+    collected: false
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let id = options.id ;
-    var postData = postsData.postList[id] ;
+    let postId = options.id ;
+    let postData = postsData.postList[postId] ;
     this.setData({ ...postData }) ;
+
+    //从缓存中获取是否被收藏
+    let postsCollected = wx.getStorageSync('posts_collected') ;
+    if (postsCollected){
+      let postCollected = postsCollected[postId];
+      this.setData({collected: postCollected}) ;
+    }else{
+      postsCollected = {} ;
+      postsCollected[postId] = false ;
+      wx.setStorageSync('posts_collected', postsCollected) ;
+    }
   },
+  onCollectionTap: function(event){
+    let nextCollected = !this.data.collected ;
+    this.setData({
+      collected: nextCollected
+    }) ;
 
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
-
+    //保存到storage中
+    let postsCollected = wx.getStorageSync('posts_collected');
+    postsCollected[this.data.postId] = nextCollected ;
+    wx.setStorageSync('posts_collected', postsCollected);
   },
-
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面隐藏
-   */
-  onHide: function () {
-
-  },
-
-  /**
-   * 生命周期函数--监听页面卸载
-   */
-  onUnload: function () {
-
-  },
-
-  /**
-   * 页面相关事件处理函数--监听用户下拉动作
-   */
-  onPullDownRefresh: function () {
-
-  },
-
-  /**
-   * 页面上拉触底事件的处理函数
-   */
-  onReachBottom: function () {
-
-  },
-
-  /**
-   * 用户点击右上角分享
-   */
-  onShareAppMessage: function () {
-
+  onShareTap: function(event){
+    
   }
 })
