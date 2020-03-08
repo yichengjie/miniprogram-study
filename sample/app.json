@@ -6,5 +6,6 @@
   "window": {
     "navigationBarBackgroundColor": "#405f80",
     "navigationBarTitleText": "小程序"
-  }
+  },
+  "sitemapLocation": "sitemap.json"
 }
