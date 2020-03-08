@@ -1,18 +1,20 @@
 // pages/posts/post-detail/post-detail.js
+let postsData = require('../../../data/posts-data.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
-
-  },
+  data: {},
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let id = options.id ;
+    var postData = postsData.postList[id] ;
+    this.setData({ ...postData }) ;
   },
 
   /**

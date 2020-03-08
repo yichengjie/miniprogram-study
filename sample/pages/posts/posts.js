@@ -1,4 +1,4 @@
-let posData = require('../../data/posts-data.js') ;
+let postsData = require('../../data/posts-data.js') ;
 
 Page({
 
@@ -6,18 +6,18 @@ Page({
    * 页面的初始数据
    */
   data: {
-    postList:[]
+    posts:[]
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({ posts: posData.postList }) ;
+    this.setData({ posts: postsData.postList }) ;
   },
   onPostTap: function(event){
     let postId = event.currentTarget.dataset.postid ;
     wx.navigateTo({
-      url: './post-detail/post-detail',
+      url: './post-detail/post-detail?id=' + postId,
     })
   }
 })
