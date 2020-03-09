@@ -1,6 +1,6 @@
 // pages/posts/post-detail/post-detail.js
 let postsData = require('../../../data/posts-data.js');
-
+let app = getApp() ;
 Page({
 
   /**
@@ -16,10 +16,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let postId = options.id;
+    //注意这里通过url传过来的参数是字符串，需要先转为数字
+    let postId = parseInt(options.id);
     let postData = postsData.postList[postId];
-    this.setData({ ...postData
-    });
+    this.setData({ ...postData});
 
     //从缓存中获取是否被收藏
     let postsCollected = wx.getStorageSync('posts_collected');
@@ -33,7 +33,38 @@ Page({
       postsCollected[postId] = false;
       wx.setStorageSync('posts_collected', postsCollected);
     }
+    
+
+    if (app.globalData.g_isPlayingMusic && 
+      app.globalData.g_currentMusicPostId === postId){
+      this.setData({
+        isPlayingMusic: true
+      });
+    }
+
+    this.setMusicMonitor();
   },
+
+
+  setMusicMonitor: function(){
+    //暂停
+    wx.onBackgroundAudioPause(() => {
+      this.setData({
+        isPlayingMusic: false
+      });
+      app.globalData.g_isPlayingMusic = false;
+      app.globalData.g_currentMusicPostId = null ;
+    });
+    //播放
+    wx.onBackgroundAudioPlay(() => {
+      this.setData({
+        isPlayingMusic: true
+      });
+      app.globalData.g_isPlayingMusic = true ;
+      app.globalData.g_currentMusicPostId = this.data.postId ;
+    });
+  },
+
   onCollectionTap: function(event) {
     //收藏变为未收藏，未收藏变为收藏
     let nextCollected = !this.data.collected;
