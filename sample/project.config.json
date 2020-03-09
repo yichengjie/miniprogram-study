@@ -61,6 +61,12 @@
 					"pathName": "pages/posts/post-detail/post-detail",
 					"query": "id=1",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "movies",
+					"pathName": "pages/movies/movies",
+					"scene": null
 				}
 			]
 		}
