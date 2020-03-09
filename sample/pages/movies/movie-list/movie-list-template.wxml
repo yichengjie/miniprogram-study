@@ -12,9 +12,11 @@
       </view>
 
       <view class="movies-container">
-        <template is="movieTemplate"></template>
-        <template is="movieTemplate"></template>
-        <template is="movieTemplate"></template>
+        <block wx:for="{{movies}}" ws:for-item="movie">
+            <template is="movieTemplate" data="{{...movie}}"></template>
+        </block>
+        <!-- <template is="movieTemplate"></template>
+        <template is="movieTemplate"></template> -->
       </view>
     </view>
   </view>

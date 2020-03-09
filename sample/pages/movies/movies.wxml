@@ -1,7 +1,7 @@
 <import src ="./movie-list/movie-list-template.wxml" />
 
-<view>
-  <template is= "movieListTemplate"></template>
+<view class="container">
+  <template is= "movieListTemplate" data="{{movies}}"></template>
   <template is= "movieListTemplate"></template>
   <template is= "movieListTemplate"></template>
 </view>
