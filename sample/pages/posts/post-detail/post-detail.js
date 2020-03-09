@@ -63,6 +63,15 @@ Page({
       app.globalData.g_isPlayingMusic = true ;
       app.globalData.g_currentMusicPostId = this.data.postId ;
     });
+
+    //停止
+    wx.onBackgroundAudioStop(()=>{
+      this.setData({
+        isPlayingMusic: false
+      });
+      app.globalData.g_isPlayingMusic = false;
+      app.globalData.g_currentMusicPostId = null;
+    }) ;
   },
 
   onCollectionTap: function(event) {

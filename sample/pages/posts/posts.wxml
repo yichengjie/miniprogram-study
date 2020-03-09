@@ -2,15 +2,15 @@
 <import src="./post-item/post-item-template.wxml" />
 
 <view>
-  <swiper indicator-dots="true" autoplay="true" interval="5000">
+  <swiper catch:tap="onSwiperTap" indicator-dots="true" autoplay="true" interval="5000">
     <swiper-item>
-      <image src="/images/wx.png"></image>
+      <image data-postId="4" src="/images/wx.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/vr.png"></image>
+      <image data-postId="3" src="/images/vr.png"></image>
     </swiper-item>
     <swiper-item>
-      <image src="/images/iqiyi.png"></image>
+      <image data-postId="2" src="/images/iqiyi.png"></image>
     </swiper-item>
   </swiper>
 
