@@ -4,15 +4,15 @@
   <view class="movie-list-container">
     <view class="inner-container">
       <view class="movie-head">
-        <text class="slogan">正在热映</text>
-        <view class="more">
+        <text class="slogan">{{categoryTitle}}</text>
+        <view catch:tap="onMoreTap" data-type="{{categoryType}}"  class="more">
           <text class="more-text">更多</text>
           <image class="more-img" src="/images/icon/arrow-right.png"></image>
         </view>
       </view>
 
       <view class="movies-container">
-        <block wx:for="{{movies}}" ws:for-item="movie">
+        <block wx:for="{{movies}}" wx:for-item="movie" wx:key ="index">
             <template is="movieTemplate" data="{{...movie}}"></template>
         </block>
         <!-- <template is="movieTemplate"></template>

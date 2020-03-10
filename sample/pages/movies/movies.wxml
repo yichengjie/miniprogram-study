@@ -1,7 +1,27 @@
 <import src ="./movie-list/movie-list-template.wxml" />
+<import src="./movie-grid/movie-grid-template.wxml"></import>
 
-<view class="container">
-  <template is= "movieListTemplate" data="{{movies}}"></template>
-  <template is= "movieListTemplate"></template>
-  <template is= "movieListTemplate"></template>
+<view class="search">
+   <icon type="search" class="search-img" size="13" color="#405f80"></icon>
+   <input type="text" placeholder="血战钢锯岭、你的名字" 
+        placeholder-class="placeholder" 
+        bindfocus="onBindFocus" 
+        bindconfirm = "onBindBlur"></input>
+   <image wx:if="{{searchPannelShow}}" class="xx-img" 
+         bindtap="onCancalImgTap" src="/images/icon/xx.png"></image>
+</view>
+<view wx:if="{{!searchPannelShow}}" class="container">
+  <template is= "movieListTemplate" 
+      data="{{categoryTitle:'正在热映',categoryType:'in_theaters',movies:inTheaters}}">
+  </template>
+  <template is= "movieListTemplate" 
+      data="{{categoryTitle:'豆瓣Top250',categoryType:'top250',movies:top250}}">
+  </template>
+  <template is= "movieListTemplate" 
+      data="{{categoryTitle:'即将上映',categoryType:'coming_soon',movies:comingSoon}}">
+  </template>
+</view>
+
+<view wx:if="{{searchPannelShow}}" class ="search-pannel">
+    <template is="movieGridTemplate" data="{{movies:searchMovies}}"></template>
 </view>
