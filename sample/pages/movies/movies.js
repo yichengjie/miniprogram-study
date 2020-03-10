@@ -119,5 +119,11 @@ Page({
             searchPannelShow: false,
             searchMovies:[]
         });
+    },
+    onMovieTap: function(event){
+        let movieid = event.currentTarget.dataset.movieid ;
+        wx.navigateTo({
+            url: `./movie-detail/movie-detail?movieid=${movieid}` 
+        }) ;
     }
 })
