@@ -1,0 +1,13 @@
+<!-- 组件模板 -->
+<view class="wrapper">
+   <view bindtap="onBindTap">这里是组件的内部节点</view>
+   <view>
+      <text>name :</text>
+      <input type="text" value="{{name}}" data-name="name" bindinput="onInputChange" />
+   </view>
+   <view>
+      <text>addr : </text>
+      <input type="text" value="{{addr}}" data-name="addr" bindinput="onInputChange" />
+   </view>
+   <slot></slot>
+</view>

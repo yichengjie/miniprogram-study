@@ -1,0 +1,10 @@
+<!--pages/comp/comp.wxml-->
+<hello name="{{name}}" addr="{{addr}}" bindcustomevent ="handleCustomEvent">hello world</hello>
+
+<view>
+   <view>表单</view>
+   <view>姓名：<input type="text" value="{{name}}" 
+         data-name="name" bindinput= "onInputChange" /></view>
+   <view>地址：<input  type="text" value="{{addr}}" 
+         data-name="addr" bindinput= "onInputChange"  /></view>
+</view>
