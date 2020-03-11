@@ -21,7 +21,7 @@
       data="{{categoryTitle:'即将上映',categoryType:'coming_soon',movies:comingSoon}}">
   </template>
 </view>
-
+<text>{{errorMsg}}</text>
 <view wx:if="{{searchPannelShow}}" class ="search-pannel">
     <template is="movieGridTemplate" data="{{movies:searchMovies}}"></template>
 </view>
