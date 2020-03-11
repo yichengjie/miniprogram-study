@@ -6,7 +6,7 @@
    <input type="text" placeholder="血战钢锯岭、你的名字" 
         placeholder-class="placeholder" 
         bindfocus="onBindFocus" 
-        bindconfirm = "onBindBlur"></input>
+        bindconfirm  = "onBindBlur"></input>
    <image wx:if="{{searchPannelShow}}" class="xx-img" 
          bindtap="onCancalImgTap" src="/images/icon/xx.png"></image>
 </view>

@@ -39,9 +39,12 @@ Page({
          title: this.data.navigateTitle
       })
    },
-   //滚动到底部加载新数据
-   onScrolltolower: function(event) {
+   onReachBottom: function (event) {
       this.getMovieListData(this.data.type);
+   },
+   onPullDownRefresh: function(){
+      this.setData({ movies: []}) ;
+      this.getMovieListData(this.data.type) ;
    },
    //获取电影列表
    getMovieListData: function(type) {
@@ -77,6 +80,12 @@ Page({
          stars
       };
       return tmp;
+   },
+   onMovieTap:function(event){
+      let movieid = event.currentTarget.dataset.movieid;
+      wx.navigateTo({
+         url: `../movie-detail/movie-detail?movieid=${movieid}`
+      });
    }
-
+  
 })
