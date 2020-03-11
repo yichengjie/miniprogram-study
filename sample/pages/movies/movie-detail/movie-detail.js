@@ -56,5 +56,18 @@ Page({
       this.setData({
          movie
       });
+   },
+   onMovieTap: function (event) {
+      let movieid = event.currentTarget.dataset.movieid;
+      wx.navigateTo({
+         url: `../movie-detail/movie-detail?movieid=${movieid}`
+      });
+   },
+   viewMoviePostImg: function(event){
+      let src = event.currentTarget.dataset.src ;
+      wx.previewImage({
+         current: src, //当前显示图片的http连接
+         urls: [src], //需要预览的图片的http连接列表
+      });
    }
 })
