@@ -1,7 +1,8 @@
 {
    "pages": [
       "pages/index/index",
-      "pages/comp/comp"
+      "pages/hello/hello",
+      "pages/datepicker/index"
    ],
    "window": {
       "backgroundTextStyle": "light",
@@ -15,9 +16,12 @@
        "text": "首页"
      },
      {
-      "pagePath": "pages/comp/comp",
-      "text": "组件练习"
-   }]
+      "pagePath": "pages/hello/hello",
+      "text": "hello组件"
+      },{
+         "pagePath": "pages/datepicker/index",
+         "text": "日期组件"
+      }]
    },
    "style": "v2",
    "sitemapLocation": "sitemap.json"
