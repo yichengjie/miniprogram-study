@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .parent{
+            width: 200px;
+            height: 600px;
+            background: gray;
+            /**
+            display属性：
+             table: 设置当前元素为<table>元素
+             table-cell: 设置当前元素为<td>元素(单元格)
+            */
+            display: table-cell;
+            /**
+            vertical-align属性：用于设置文本内容的垂直方向对齐方式
+            top: 顶部对齐
+            middle: 居中对齐
+            bottom: 底部对齐
+             */
+            vertical-align: middle;
+        }
+        .child{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">慕课网</div>
+    </div>
+</body>
+</html>

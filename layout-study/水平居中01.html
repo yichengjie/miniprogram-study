@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        .parent{
+            width: 100%;
+            height: 200px;
+            background: gray;
+            /**
+            text-align属性：是为文本内容设置对齐方式
+            left:左对齐
+            right：右对齐
+            center: 居中对齐
+            本属性为什么会对div作用，关键在于为子元素设置了display: inline-block;
+             */
+            text-align: center;
+        }
+        .child{
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            font-weight: bold;
+            /**
+              display属性：
+              block: 块级元素
+              inline: 内联元素(text-align属性有效)
+              inline-block:行内块级元素(块级+内联)
+             */
+            display: inline-block;
+            text-align: left;
+        }
+    </style>
+</head>
+<body>
+    <div class="parent">
+        <div class="child">慕课网</div>
+    </div>
+</body>
+</html>
