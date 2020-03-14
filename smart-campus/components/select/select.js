@@ -32,10 +32,8 @@ Component({
    methods: {
       optionTap(e) {
          let dataset = e.target.dataset
-         this.setData({
-            current: dataset,
-            isShow: false
-         });
+         //关闭select组件
+         this.setData({isShow: false});
          // 调用父组件方法，并传参
          this.triggerEvent("change", { ...dataset })
       },
@@ -76,12 +74,13 @@ Component({
                break ;
             }
          } 
+         let newCurrent = this.data.defaultOption ;
          if (newItem != null){
             let {[this.data.key]: id, [this.data.text]:name} = newItem ;
-            this.setData({
-               current: { id, name } 
-            });
+            newCurrent = { id, name } ;
          }
+         //更新select选中项
+         this.setData({current: newCurrent});
       }
    }
 });
@@ -91,11 +90,9 @@ Component({
  */
 function parseSelectResult(options, key, text) {
    let result = []
-   if (key !== 'id' || text !== 'name') {
-      for (let item of options) {
-         let { [key]: id, [text]: name } = item;
-         result.push({ id, name })
-      }
+   for (let item of options) {
+      let { [key]: id, [text]: name } = item;
+      result.push({ id, name })
    }
    return result;
 }

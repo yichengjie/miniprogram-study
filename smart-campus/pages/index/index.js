@@ -2,33 +2,27 @@
 Page({
    data: {
       options: [{
-         city_id: '001',
-         city_name: '北京'
+         id: '001',
+         name: '北京'
       }, {
-         city_id: '002',
-         city_name: '上海'
+         id: '002',
+         name: '上海'
       }, {
-         city_id: '003',
-         city_name: '深圳'
+         id: '003',
+         name: '深圳'
       }],
       value1: ''
    },
    change(e) {
-      console.info(e.detail) ;
+      let id = e.detail.id ;
+      this.setData({ value1:id}) ;
    },
    onBtn1Tap: function(event){
-      let options = [{
-         city_id: '001',
-         city_name: '北京'
-      }, {
-         city_id: '002',
-         city_name: '上海'
-      }] ;
-      this.setData({
-         options,
-         value1: '002'
-      }) ;
-    
+      this.setData({value1: '002'}) ;
+   },
+   close: function(){
+      // 关闭select
+      this.selectComponent('#select1').close()
    }
 
 })

@@ -1,8 +1,7 @@
 .select-box {
   font-size: 30rpx;
   position: relative;
-  width: 400rpx;
-  margin-left: 30px;
+  width: 100%;
 }
 
 .select-current {

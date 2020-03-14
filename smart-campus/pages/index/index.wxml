@@ -1,10 +1,10 @@
-<view>
+<view class="container" bindtap="close">
    <button bindtap="onBtn1Tap">测试按钮</button>
    <select id ="select1" 
          options="{{options}}" 
          value ="{{value1}}"
-         key="city_id" 
-         text="city_name" 
+         key="id" 
+         text="name" 
          bind:change="change">
    </select>  
 </view>
